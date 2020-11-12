@@ -1,0 +1,14 @@
+<h1><%= @cocktail.name %></h1>
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+  <%= dose.ingredient.name %>
+<% end %>
+
+<%= simple_form_for [ @cocktail, @dose ] do |f| %>
+<%= f.input :description %>
+<%= f.association :ingredient %>
+<% if @dose.errors.any? %>
+<p>*Ingredient has already been added, or amount not specified.</p>
+<% end %>
+<%= f.submit %>    
+<% end %>
