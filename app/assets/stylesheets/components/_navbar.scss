@@ -1,12 +1,25 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  padding: 0px 90px;
+  height: 90px;
+  .navigation {
+    display: flex;
+    p {
+      position: relative;
+      top: 11px;
+    }
+  }
+  .logo {
+    height: 70px;
+    width: auto;
+    
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+@media only screen and (max-width: 800px) {
+.navbar {
+  justify-content: center;
+  height: 180px
+  }
 }

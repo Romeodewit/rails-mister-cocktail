@@ -1,14 +1,23 @@
-<h1>Cocktails</h1>
-<%= link_to "Add cocktail", new_cocktail_path %>
+<div class="banner">
+  <h1>Welcome to Discover Cocktails</h1>
+</div>
 
-<div class="container w-100">
+<div class="cocktail_container">
   <% @cocktails.each do |cocktail| %>
-  <div class="cocktail_card">
-    <%= link_to cocktail.name, cocktail %>
-      <% cocktail.doses.each do |dose| %>
-      <%= dose.description %>
-      <%= dose.ingredient.name %>
-    <% end %>
+  <div class="col-sm-12 col-lg-6 ">  
+    <div class="cocktail_card d-flex">
+      <div class="image">
+      </div>
+      <div class="content">
+        <h5><%= cocktail.name %></h5>
+        <% cocktail.doses.each do |dose| %>
+          <div class="d-flex flex-row w-100 justify-content-between">
+            <p><%= dose.ingredient.name %></p>
+            <p><%= dose.description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>

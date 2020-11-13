@@ -1,0 +1,17 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0px 50px;
+  background-image: linear-gradient(rgba(22,22,22,0.6), rgba(22,22,22,0.6)), asset-url("banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  h1 {
+    color: white;
+  }
+
+}
