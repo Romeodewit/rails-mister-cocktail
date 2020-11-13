@@ -4,20 +4,25 @@
 
 <div class="cocktail_container">
   <% @cocktails.each do |cocktail| %>
-  <div class="col-sm-12 col-lg-6 ">  
-    <div class="cocktail_card d-flex">
-      <div class="image">
-      </div>
-      <div class="content">
-        <h5><%= cocktail.name %></h5>
-        <% cocktail.doses.each do |dose| %>
-          <div class="d-flex flex-row w-100 justify-content-between">
-            <p><%= dose.ingredient.name %></p>
-            <p><%= dose.description %></p>
+    <div class="col-sm-12 col-lg-6 ">  
+      <%= link_to cocktail do %>
+        <div class="cocktail_card d-flex">
+          <% if cocktail.photo.attached? %>
+            <div class="image" style="background-image: url('<%= cl_image_path cocktail.photo.key %>');"><h1 class="cocktail_name_text"><div class="layer"><%= cocktail.name %></div></h1></div>
+          <% else %>
+            <div class="image" style="background-image: url('<%= asset_path 'placeholder.jpg' %>');"><h1 class="cocktail_name_text"><div class="layer"><%= cocktail.name %></div></h1></div>
+          <% end %>
+          <div class="content">
+            <h5><%= cocktail.name %></h5>
+            <% cocktail.doses.each do |dose| %>
+              <div class="ingredients">
+                <p><%= dose.ingredient.name %></p>
+                <p><%= dose.description %></p>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-  </div>
   <% end %>
 </div>

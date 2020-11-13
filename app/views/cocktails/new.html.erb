@@ -1,9 +1,13 @@
-<div class="image">
-</div>
-<div class="form-box">
-<%= simple_form_for(@cocktail) do |f| %>
-<%= f.input :name %>
-<%= f.submit %>    
-<% end %>
-</div>
+<div class="new_container d-flex w-100">
+  <div class="new_image">
+  </div>
   
+  <div class="form-box">
+    <h1>Add your cocktail</h1>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn btn-outline-warning waves-effect" %>    
+    <% end %>
+  </div>
+</div>
