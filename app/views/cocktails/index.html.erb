@@ -6,6 +6,7 @@
   <% @cocktails.each do |cocktail| %>
     <div class="col-sm-12 col-lg-6 ">  
       <%= link_to cocktail do %>
+        
         <div class="cocktail_card d-flex">
           <% if cocktail.photo.attached? %>
             <div class="image" style="background-image: url('<%= cl_image_path cocktail.photo.key %>');"><h1 class="cocktail_name_text"><div class="layer"><%= cocktail.name %></div></h1></div>
@@ -22,6 +23,7 @@
             <% end %>
           </div>
         </div>
+        
       <% end %>
     </div>
   <% end %>

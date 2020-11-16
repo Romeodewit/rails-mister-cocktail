@@ -21,3 +21,15 @@ a:hover {
   text-decoration: none!important;
   color: black;
 }
+
+html, body {
+  height: 90%;
+  margin: 0;
+}
+.content {
+  min-height: 90%;
+}
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
