@@ -1,10 +1,15 @@
 <div class="banner">
   <h1>Welcome to Discover Cocktails</h1>
 </div>
-
-<div class="cocktail_container">
+<div class="search-cocktail">
+  <form action="" method="get" class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2">
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <input class="form-control form-control-sm ml-3" style="width: 200px; margin-right: 5px;" type="text" placeholder="Search by ingredient" aria-label="Search">
+  </form>
+</div>
+<div class="cocktail_container d-flex">
   <% @cocktails.each do |cocktail| %>
-    <div class="col-sm-12 col-lg-6 ">  
+    <div class="col-sm-12 col-lg-6 my-5">
       <%= link_to cocktail do %>
         
         <div class="cocktail_card d-flex">

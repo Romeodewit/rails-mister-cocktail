@@ -1,14 +1,37 @@
-<h1><%= @cocktail.name %></h1>
-<% @cocktail.doses.each do |dose| %>
-  <%= dose.description %>
-  <%= dose.ingredient.name %>
-<% end %>
-
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-<%= f.input :description %>
-<%= f.association :ingredient %>
-<% if @dose.errors.any? %>
-<p>*Ingredient has already been added, or amount not specified.</p>
-<% end %>
-<%= f.submit %>    
-<% end %>
+<div class="container-fluid">
+  <h1 class="text-center py-3"><%= @cocktail.name %></h1>
+  <div class="d-flex justify-content-center">
+    <div class="w-50 d-flex">
+      <div class="w-50">
+        <%= cl_image_tag @cocktail.photo.key, :width=>600, :height=>400, :gravity=>"auto", :background=>"auto", :crop=>"fill_pad" %>
+      </div>
+      <div class="w-50 bg-light border p-5">
+        <div class="d-flex flex-column">
+        <h4>Ingredients:</h4>
+        <% @cocktail.doses.each do |dose| %>
+          <div class="d-flex justify-content-between">
+            <p><%= dose.ingredient.name %></p>
+            <p><%= dose.description %></p>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-50 d-flex justify-content-center">
+    <div class="w-50">
+    </div>
+    <div class="w-50 p-4 mb-3 bg-light border">
+      <div class=""> 
+        <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+        <%= f.association :ingredient %>
+        <%= f.input :description, label: "Amount" %>
+        <% if @dose.errors.any? %>
+        <p>*Ingredient has already been added, or amount not specified.</p>
+        <% end %>
+        <%= f.submit class: "btn btn-warning" %>    
+        <% end %>
+      </div> 
+    </div>
+  </div>
+</div>

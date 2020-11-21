@@ -1,19 +1,28 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  background-color: #fbfefb;
+  width: 100%;
   padding: 0px 90px;
   height: 90px;
+  border-bottom: 1px solid rgba($color: #605b56, $alpha: 0.1);
   .navigation {
+    width: 100%;
     display: flex;
-    p {
-      position: relative;
-      top: 11px;
-    }
+    justify-content: space-between;
+    align-items: flex-end;
   }
   .logo {
     height: 70px;
     width: auto;
-    
+  }
+  .btn {
+    border: 1px solid #F7BD1E;
+    color: #F7BD1E;
+  }
+  :hover {
+    background-color: white;
   }
 }
 

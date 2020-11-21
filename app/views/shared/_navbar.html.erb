@@ -1,12 +1,10 @@
 <div class="navbar">
-  <div class="logo">
-  <%= link_to image_tag("cocktails.png", alt: "cocktails logo", class: "logo"), root_path %>
-  </div>
   <div class="navigation">
-    <form action="" method="get" class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2">
-      <i class="fas fa-search" aria-hidden="true"></i>
-      <input class="form-control form-control-sm ml-3" style="width: 200px; margin-right: 5px;" type="text" placeholder="Search by ingredient" aria-label="Search">
-    </form>
-    <p><%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-outline-warning waves-effect btn-sm" %></p>
+    <div class="logo-box">
+      <%= link_to image_tag("cocktails.png", alt: "cocktails logo", class: "logo"), root_path %>
+    </div>
+    <div class="add_cocktail">
+      <p><%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-outline-warning waves-effect btn-sm" %></p>
+    </div>
   </div>
 </div>
